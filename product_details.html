@@ -12,11 +12,16 @@
     <div class="right-band"></div>
   </div>
   <header class="header">
-    <a href="#" class="logo">Jouets Kids</a>
     <nav class="navbar">
-      <a href="#">Accueil</a>
-      <a href="#">Info</a>
-      <a href="#">Panier</a>
+      <a href="index.html" class="logo">Jouets Kids</a>
+      <div class="nav-links">
+        <ul>
+          <li class="active"><a href="index.html">Accueil</a></li>
+          <li><a href="#">Support</a></li>
+          <li><a href="#">Panier</a></li>
+        </ul>
+      </div>
+      <img src="img/menu-btn.png" alt="menu" class="menu-hamburger">
     </nav>
   </header>
   <main>
@@ -27,4 +32,21 @@
   </main>
   <script src="js/product_details.js"></script>
 </body>
+  <script>
+    const menuHamburger = document.querySelector(".menu-hamburger");
+    const navLinks = document.querySelector(".nav-links");
+    const allContainer = document.querySelector(".item-container");
+    let isAllContainerVisible = true;
+
+  menuHamburger.addEventListener('click', () => {
+    navLinks.classList.toggle('mobile-menu');
+    isAllContainerVisible = !isAllContainerVisible;
+
+    if (isAllContainerVisible) {
+      allContainer.classList.remove('item-container-transition');
+    } else {
+      allContainer.classList.add('item-container-transition');
+    }
+  });
+  </script>
 </html>
