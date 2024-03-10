@@ -3,19 +3,19 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Items de KeduFron't</title>
+  <title>KEDUFRONT</title>
   <link rel="stylesheet" href="css/style.css">
   <script src="js/index.js"></script>
 </head>
 <body>
   <header class="header">
     <nav class="navbar">
-      <a href="index.html" class="logo">Jouets Kids</a>
+      <a href="index.html" class="logo">KEDUFRONT</a>
       <div class="nav-links">
         <ul>
           <li class="active"><a href="index.html">Accueil</a></li>
           <li><a href="#">Support</a></li>
-          <li><a href="#">Panier</a></li>
+          <li><a href="basket.html">Panier</a></li>
         </ul>
       </div>
       <img src="img/menu-btn.png" alt="menu" class="menu-hamburger">
@@ -44,21 +44,4 @@
     </div>
   </main>
 </body>
-    <script>
-        const menuHamburger = document.querySelector(".menu-hamburger");
-        const navLinks = document.querySelector(".nav-links");
-        const allContainer = document.querySelector(".all_container");
-        let isAllContainerVisible = true;
-
-      menuHamburger.addEventListener('click', () => {
-        navLinks.classList.toggle('mobile-menu');
-        isAllContainerVisible = !isAllContainerVisible;
-
-        if (isAllContainerVisible) {
-          allContainer.classList.remove('item-container-transition');
-        } else {
-          allContainer.classList.add('item-container-transition');
-        }
-      });
-    </script>
 </html>

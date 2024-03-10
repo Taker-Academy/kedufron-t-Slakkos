@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Panier</title>
+  <link rel="stylesheet" href="css/basket.css">
+</head>
+<body>
+  <div class="container">
+    <div class="left-band"></div>
+    <div class="right-band"></div>
+  </div>
+  <header class="header_panier">
+    <nav class="navbar">
+      <a href="index.html" class="logo">KEDUFRONT</a>
+      <div class="nav-links">
+        <ul>
+          <li><a href="index.html">Accueil</a></li>
+          <li><a href="#">Support</a></li>
+          <li class="active"><a href="panier.html">Panier</a></li>
+        </ul>
+      </div>
+      <img src="img/menu-btn.png" alt="menu" class="menu-hamburger">
+    </nav>
+  </header>
+  <main>
+    <div class="cart-container">
+      <h1>Votre Panier</h1>
+      <div class="cart-items" id="cartItems">
+      </div>
+      <div class="cart-summary">
+        <p>Total d'articles: <span id="totalItems"></span></p>
+        <p>Prix total: <span id="totalPrice"></span>€</p>
+      </div>
+      <button id="checkoutButton">Passer la commande</button>
+    </div>
+  </main>
+  <script src="js/basket.js"></script>
+</body>
+</html>
