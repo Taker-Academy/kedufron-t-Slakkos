@@ -25,9 +25,17 @@ function addBasket(product) {
 
 function removeFromBasket(product) {
     let basket = getBasket();
-    basket = basket.filter(p => p.id != product.id)
-    saveBasket(basket);
+    let foundProduct = basket.find(p => p.id == product.id);
+    if (foundProduct) {
+        if (foundProduct.quantity > 1) {
+            foundProduct.quantity--;
+        } else {
+            basket = basket.filter(p => p.id != product.id);
+        }
+        saveBasket(basket);
+    }
 }
+
 
 function changeQuantity(product, quantity) {
     let basket = getBasket();
@@ -135,7 +143,7 @@ function createCartItemElement(item) {
 
 function updateCartDisplay() {
     const cartItemsContainer = document.getElementById('cartItems');
-    cartItemsContainer.innerHTML = ''; // Effacer le contenu actuel du panier
+    cartItemsContainer.innerHTML = '';
     const basket = getBasket();
     basket.forEach(item => {
         const cartItemElement = createCartItemElement(item);
@@ -143,8 +151,8 @@ function updateCartDisplay() {
     });
 }
 
-async function addCartItem(itemId) {
-    const item = await getItemById(itemId);
+function addCartItem(itemId) {
+    const item = getItemById(itemId);
     if (item) {
         addBasket(item);
         updateCartDisplay();
@@ -154,14 +162,20 @@ async function addCartItem(itemId) {
     }
 }
 
-
 function removeCartItem(itemId) {
     let basket = getBasket();
-    basket = basket.filter(item => item.id !== itemId);
-    saveBasket(basket);
-    updateCartDisplay();
-    updateCartSummary();
+    let index = basket.findIndex(item => item.id === itemId);
+    if (index !== -1) {
+        basket[index].quantity--;
+        if (basket[index].quantity === 0) {
+            basket.splice(index, 1);
+        }
+        saveBasket(basket);
+        updateCartDisplay();
+        updateCartSummary();
+    }
 }
+
 
 document.addEventListener('DOMContentLoaded', () => {
     updateCartDisplay();

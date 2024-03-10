@@ -37,18 +37,20 @@ document.addEventListener('DOMContentLoaded', function () {
   items.forEach(itemId => fetchAndDisplayItem(itemId, `item${itemId}`));
 });
 
-const menuHamburger = document.querySelector(".menu-hamburger");
-const navLinks = document.querySelector(".nav-links");
-const allContainer = document.querySelector(".all_container");
-let isAllContainerVisible = true;
+document.addEventListener('DOMContentLoaded', function() {
+  const menuHamburger = document.querySelector(".menu-hamburger");
+  const allContainer = document.querySelector(".all_container");
+  console.log(allContainer); // Vérifie si l'élément est correctement sélectionné
+  let isAllContainerVisible = true;
 
-menuHamburger.addEventListener('click', () => {
-  navLinks.classList.toggle('mobile-menu');
-  isAllContainerVisible = !isAllContainerVisible;
-
-  if (isAllContainerVisible) {
-      allContainer.classList.remove('item-container-transition');
-  } else {
-      allContainer.classList.add('item-container-transition');
-  }
+  menuHamburger.addEventListener('click', () => {
+      const navLinks = document.querySelector(".nav-links");
+      navLinks.classList.toggle('mobile-menu');
+      isAllContainerVisible = !isAllContainerVisible;
+      if (isAllContainerVisible) {
+          allContainer.classList.remove('item-container-transition');
+      } else {
+          allContainer.classList.add('item-container-transition');
+      }
+  });
 });
