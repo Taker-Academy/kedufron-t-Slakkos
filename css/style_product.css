@@ -167,6 +167,12 @@ body {
     color: #666;
 }
 
+.button-custom {
+    background-color: rgba(0, 0, 0, 0.085);
+    border: 1px solid #ddd;
+    color: white;
+}
+
 /**********bandent noir***********/
 
 .container {
@@ -181,6 +187,7 @@ body {
     bottom: 0;
     width: 400px;
     margin-top: 135px;
+    margin-bottom: 300px;
     border-radius: 4px;
     border: 1px solid #ddd;
     z-index: -1;
@@ -255,4 +262,88 @@ body {
     display: flex;
     justify-content: flex-end;
     align-items: center;
+}
+
+footer {
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    backdrop-filter: blur(7px);
+    border-radius: 4px;
+    border: 1px solid #ddd;
+    padding:90px;
+    font-size: 14px;
+}
+
+
+.footer-nav {
+    display: flex;
+    margin-left: -45px;
+    width: 1640px;
+}
+
+.footer-nav a {
+    color: #000000;
+    text-decoration: none;
+    justify-content: flex-start;
+    margin-top: -40px;
+    font-weight: 750;
+    font-size: 22px;
+    width: 1200px;
+    height: 30px;
+}
+
+  /*___________________________*/
+
+.footer-nav-2 {
+    display: flex;
+    margin-left: -45px;
+    width: 1640px;
+}
+
+.footer-nav-2 a {
+    color: #000000;
+    text-decoration: none;
+    justify-content: flex-start;
+    margin-top: 10px;
+    font-size: 18px;
+    width: 1200px;
+    height: 30px;
+}
+
+  /*___________________________*/
+
+.footer-nav-3 {
+    display: flex;
+    margin-left: -45px;
+    width: 1640px;
+
+}
+
+.footer-nav-3 a {
+    color: #000000;
+    text-decoration: none;
+    justify-content: flex-start;
+    margin-top: 5px;
+    font-size: 18px;
+    width: 1200px;
+    height: 30px;
+}
+
+/*___________________________*/
+
+.footer-nav-4 {
+    display: flex;
+    margin-left: -45px;
+    width: 1640px;
+}
+.footer-nav-4 a {
+    color: #000000;
+    text-decoration: none;
+    justify-content: flex-start;
+    margin-top: 6px;
+    font-size: 18px;
+    width: 1200px;
+    height: 30px;
 }

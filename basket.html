@@ -1,41 +1,63 @@
 <!DOCTYPE html>
 <html lang="fr">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Panier</title>
-  <link rel="stylesheet" href="css/basket.css">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Panier</title>
+    <link rel="stylesheet" href="css/basket.css">
 </head>
 <body>
-  <div class="container">
-    <div class="left-band"></div>
-    <div class="right-band"></div>
-  </div>
-  <header class="header_panier">
-    <nav class="navbar">
-      <a href="index.html" class="logo">KEDUFRONT</a>
-      <div class="nav-links">
-        <ul>
-          <li><a href="index.html">Accueil</a></li>
-          <li><a href="#">Support</a></li>
-          <li class="active"><a href="panier.html">Panier</a></li>
-        </ul>
-      </div>
-      <img src="img/menu-btn.png" alt="menu" class="menu-hamburger">
-    </nav>
-  </header>
-  <main>
-    <div class="cart-container">
-      <h1>Votre Panier</h1>
-      <div class="cart-items" id="cartItems">
-      </div>
-      <div class="cart-summary">
-        <p>Total d'articles: <span id="totalItems"></span></p>
-        <p>Prix total: <span id="totalPrice"></span>€</p>
-      </div>
-      <button id="checkoutButton">Passer la commande</button>
+    <div class="container">
+        <div class="left-band"></div>
+        <div class="right-band"></div>
     </div>
-  </main>
-  <script src="js/basket.js"></script>
+    <header class="header_panier">
+        <nav class="navbar">
+            <a href="index.html" class="logo">KEDUFRONT</a>
+            <div class="nav-links">
+                <ul>
+                    <li><a href="index.html">Accueil</a></li>
+                    <li><a href="#">Support</a></li>
+                    <li class="active"><a href="panier.html">Panier</a></li>
+                </ul>
+            </div>
+            <img src="img/menu-btn.png" alt="menu" class="menu-hamburger">
+        </nav>
+    </header>
+    <main>
+        <div class="cart-container">
+            <h1>Votre Panier</h1>
+            <div class="cart-items" id="cartItems">
+            </div>
+            <div class="cart-summary">
+                <p>Total d'articles: <span id="totalItems"></span></p>
+                <p>Prix total: <span id="totalPrice"></span>€</p>
+            </div>
+            <button id="checkoutButton">Passer la commande</button>
+        </div>
+    </main>
+    <script src="js/basket.js"></script>
+    <section class="footer">
+      <footer>
+          <div class="footer-nav">
+              <a href="#">A propos</a>
+              <a href="#">Nos Doudou</a>
+              <a href="#">Assistance</a>
+          </div>
+          <div class="footer-nav-2">
+              <a href="#">Fonctionnement du site</a>
+              <a href="#">Chartes qualité</a>
+              <a href="#">Centre d'aide</a>
+          </div>
+          <div class="footer-nav-3">
+              <a href="#">Conditions générales de vente</a>
+              <a href="#">Qualité</a>
+              <a href="#">Nous contacter</a>
+          </div>
+          <div class="footer-nav-4">
+              <a href="#">Données et confidentalité</a>
+          </div>
+      </footer>
+  </section>
 </body>
 </html>

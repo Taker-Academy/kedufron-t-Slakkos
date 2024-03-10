@@ -4,7 +4,7 @@ function saveBasket(basket) {
 
 function getBasket() {
     let basket = localStorage.getItem("basket")
-    if(basket == null) {
+    if (basket == null) {
         return [];
     } else {
         return JSON.parse(basket);
@@ -60,13 +60,13 @@ function getTotalPrice() {
     return total;
 }
 
-document.addEventListener('DOMContentLoaded', function() {
+document.addEventListener('DOMContentLoaded', function () {
     // Récupérer l'ID de l'article à partir de l'URL
     const urlParams = new URLSearchParams(window.location.search);
     const itemId = urlParams.get('id');
     // Afficher les détails de l'article
     fetchAndDisplayItem(itemId);
-  });
+});
 
 async function fetchAndDisplayItem(itemId) {
     try {
@@ -96,19 +96,19 @@ async function fetchAndDisplayItem(itemId) {
 
 async function getItemById(itemId) {
     const url = `https://api.kedufront.juniortaker.com/item/${itemId}`;
-        try {
-            const response = await fetch(url);
-            if (!response.ok) {
-                throw new Error(`HTTP error! status: ${response.status}`);
-            }
-            const data = await response.json();
-            if (!data.item) {
-                throw new Error('Item not found or response format is incorrect');
-            }
-            return data.item;
-        } catch (error) {
-            console.error(error);
-            return null;
+    try {
+        const response = await fetch(url);
+        if (!response.ok) {
+            throw new Error(`HTTP error! status: ${response.status}`);
+        }
+        const data = await response.json();
+        if (!data.item) {
+            throw new Error('Item not found or response format is incorrect');
+        }
+        return data.item;
+    } catch (error) {
+        console.error(error);
+        return null;
     }
 }
 
@@ -130,8 +130,9 @@ function createCartItemElement(item) {
         <button class="btn-add" onclick="addCartItem(${item.id})">+</button>
     </div>
     `;
-return cartItem;
+    return cartItem;
 }
+
 function updateCartDisplay() {
     const cartItemsContainer = document.getElementById('cartItems');
     cartItemsContainer.innerHTML = ''; // Effacer le contenu actuel du panier
@@ -142,8 +143,8 @@ function updateCartDisplay() {
     });
 }
 
-function addCartItem(itemId) {
-    const item = getItemById(itemId);
+async function addCartItem(itemId) {
+    const item = await getItemById(itemId);
     if (item) {
         addBasket(item);
         updateCartDisplay();
@@ -152,6 +153,7 @@ function addCartItem(itemId) {
         console.error('Item not found');
     }
 }
+
 
 function removeCartItem(itemId) {
     let basket = getBasket();
